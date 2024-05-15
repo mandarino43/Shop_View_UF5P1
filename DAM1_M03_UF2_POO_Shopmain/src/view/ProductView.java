@@ -157,15 +157,12 @@ public class ProductView extends javax.swing.JDialog {
         switch (opcion) {
             case 1:
                 addProductView();
-                shop.showInventory();
                 break;
             case 2:
                 addStockView();
-                shop.showInventory();
                 break;
             case 9:
                 deleteProductView();
-                shop.showInventory();
                 break;
 
         }
@@ -207,7 +204,7 @@ public class ProductView extends javax.swing.JDialog {
             int stock = parseInt(jTStock.getText());
             int newStock = product.getStock() + stock;
             product.setStock(newStock);
-          JOptionPane.showMessageDialog(this, "El stock del producto " + name + " ha sido actualizado ", "SUCCES", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "El stock del producto " + name + " ha sido actualizado ", "SUCCES", JOptionPane.PLAIN_MESSAGE);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "No se ha encontrado el producto." + name, "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -224,8 +221,7 @@ public class ProductView extends javax.swing.JDialog {
                 for (int i = 0; i < shop.inventory.size(); i++) {
                     if (shop.inventory.get(i) != null && shop.inventory.get(i).getName().equalsIgnoreCase(name)) {
                         shop.inventory.remove(i);
-       JOptionPane.showMessageDialog(this, "El stock del producto " + name + " ha sido eliminado ", "SUCCES", JOptionPane.PLAIN_MESSAGE);
-
+                        JOptionPane.showMessageDialog(this, "El stock del producto " + name + " ha sido eliminado ", "SUCCES", JOptionPane.PLAIN_MESSAGE);
 
                     }
                 }
