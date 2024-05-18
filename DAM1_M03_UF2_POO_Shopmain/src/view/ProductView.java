@@ -215,6 +215,7 @@ public class ProductView extends javax.swing.JDialog {
     public void deleteProductView() {
         String name = jTName.getText();
         boolean product = shop.productExists(name);
+
         if (product) {
             Product prod = shop.findProduct(name);
             if (prod != null) {
@@ -222,13 +223,14 @@ public class ProductView extends javax.swing.JDialog {
                     if (shop.inventory.get(i) != null && shop.inventory.get(i).getName().equalsIgnoreCase(name)) {
                         shop.inventory.remove(i);
                         JOptionPane.showMessageDialog(this, "El stock del producto " + name + " ha sido eliminado ", "SUCCES", JOptionPane.PLAIN_MESSAGE);
-
+                        dispose();
                     }
                 }
-            } else {
-                JOptionPane.showMessageDialog(this, "El producto a eliminar no existe en el inventario" + name, "ERROR", JOptionPane.ERROR_MESSAGE);
-
             }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "El producto a eliminar no existe en el inventario", "ERROR", JOptionPane.ERROR_MESSAGE);
+               dispose();
         }
     }
 
