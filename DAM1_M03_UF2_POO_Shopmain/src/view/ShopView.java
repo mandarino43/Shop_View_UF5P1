@@ -16,7 +16,7 @@ import utils.Constants;
  */
 public class ShopView extends javax.swing.JFrame {
 
-    public Shop tienda ;
+    public Shop tienda;
     public int option;
 
     /**
@@ -119,38 +119,39 @@ public class ShopView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCashActionPerformed
-            openCashView();
+        openCashView();
     }//GEN-LAST:event_jBCashActionPerformed
 
     private void jBAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAddActionPerformed
-    option = Constants.OPTION_ADD_PRODUCT;
+        option = Constants.OPTION_ADD_PRODUCT;
         OpenProductView();
-       
+
     }//GEN-LAST:event_jBAddActionPerformed
 
     private void jBStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBStockActionPerformed
-     option = Constants.OPTION_UPDATE_STOCK;
+        option = Constants.OPTION_UPDATE_STOCK;
         OpenProductView();
-       
+
     }//GEN-LAST:event_jBStockActionPerformed
 
     private void jBDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBDeleteActionPerformed
         option = Constants.OPTION_DELETE_PRODUCT;
         OpenProductView();
-      
+
     }//GEN-LAST:event_jBDeleteActionPerformed
 
     /**
      * @param args the command line arguments
      */
-   public void openCashView(){
-   CashView cv = new CashView(tienda);
-   cv.setVisible(true);
-   }
-     public void OpenProductView(){
-   ProductView pv = new ProductView(tienda,option);
-   pv.setVisible(true);
-   }
+    public void openCashView() {
+        CashView cv = new CashView(tienda);
+        cv.setVisible(true);
+    }
+
+    public void OpenProductView() {
+        ProductView pv = new ProductView(tienda, option);
+        pv.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAdd;

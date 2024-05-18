@@ -15,7 +15,6 @@ import static utils.Constants.MAX_ATTEMPTS;
 public class LoginVIew extends javax.swing.JFrame {
 
     private int failedAttempts = 0;
- 
 
     /**
      * Creates new form LoginVIew
@@ -100,24 +99,25 @@ public class LoginVIew extends javax.swing.JFrame {
     }//GEN-LAST:event_jTNumActionPerformed
 
     private void jBLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLoginActionPerformed
-          if (evt.getSource() == jBLogin) {
+        if (evt.getSource() == jBLogin) {
         }
-            logUser();
+        logUser();
     }//GEN-LAST:event_jBLoginActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-     
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginVIew().setVisible(true);
             }
         });
     }
-  private void logUser() {
-          Employee employee = new Employee();
+
+    private void logUser() {
+        Employee employee = new Employee();
         int user = Integer.parseInt(jTNum.getText());
         String pass = jTPass.getText();
         boolean finish = employee.logEmployee(user, pass);
@@ -128,9 +128,11 @@ public class LoginVIew extends javax.swing.JFrame {
                 System.exit(0);
             } else {
                 JOptionPane.showMessageDialog(this, "Numero de usuario o contraseña erronea.", "ERROR", JOptionPane.ERROR_MESSAGE);
+             jTPass.setText("");
+             jTNum.setText("");
             }
         } else {
-          JOptionPane.showMessageDialog(this, "Session iniciada", "LOGIN", JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Session iniciada", "LOGIN", JOptionPane.PLAIN_MESSAGE);
 
             this.setVisible(false);
             dispose();

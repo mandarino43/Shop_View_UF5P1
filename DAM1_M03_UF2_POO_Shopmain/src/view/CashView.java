@@ -22,8 +22,8 @@ public class CashView extends javax.swing.JDialog {
     }
 
     CashView(Shop shop) {
-            initComponents();
-       Amount dinero = shop.getCash();
+        initComponents();
+        Amount dinero = shop.getCash();
         jTCash.setText(String.valueOf(dinero));
         jTCash.setEditable(false);
     }
@@ -102,13 +102,12 @@ public class CashView extends javax.swing.JDialog {
     }//GEN-LAST:event_jTCashActionPerformed
 
     private void jBExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBExitActionPerformed
-      dispose();
+        dispose();
     }//GEN-LAST:event_jBExitActionPerformed
 
     /**
      * @param args the command line arguments
      */
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBExit;
